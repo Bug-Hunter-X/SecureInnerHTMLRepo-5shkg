@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Safe HTML Example</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Safe use of textContent
+    let userInput = prompt("Enter some text:");
+    //Escape the user input to avoid XSS vulnerabilities
+    let escapedInput = userInput.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    document.getElementById("myDiv").textContent = escapedInput;
+  </script>
+</body>
+</html>
